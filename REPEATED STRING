@@ -1,0 +1,27 @@
+public class Solution {
+
+    // Complete the repeatedString function below.
+    static long repeatedString(String s, long n) {
+        int i;
+        long len,count,count_res;
+        count=count_res=len=0;
+        len=s.length();
+        for(i=0;i<len;i++)
+        {
+            if(s.charAt(i)=='a')
+            {
+                count++;
+            }
+        }
+        long rem=n%len;
+        for(i=0;i<rem;i++)
+        {
+            if(s.charAt(i)=='a')
+            {
+                count_res++;
+            }
+        }
+        long div=n/len;
+        count_res+=(count*div);
+        return count_res;
+    }
